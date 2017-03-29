@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>58-TEG-WMDA-UI</title>
+		<link rel="stylesheet" href="css/normal.css" />
+		<link rel="stylesheet" href="css/ui.css" />
+		<link rel="stylesheet" href="css/daterangepicker.min.css" />
+	</head>
+
+	<body>
+		<div class="wmda-ui clear-fix">
+			<div class="wmda-ui-head">
+				<div class="wmda-ui-logo">
+					<div class="wmda-ui-logo-img">
+						<img src="img/logo.PNG" />
+					</div>
+					<h3>58-TEG</h3>
+					<p>WMDA-UI</p>
+				</div>
+			</div>
+			<h1 class="wmda-ui-title">基础样式</h1>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">Dropdown</h3>
+				<div class="dropdown-menu dropdown-toggle">
+					<button class="dropdown-menu-btn" type="button">
+						<p>58</p>
+						<span class="dropdown-arrow"></span>
+					</button>
+					<ul class="dropdown-menu-list">
+						<li>
+							<a>选项1</a>
+						</li>
+						<li>
+							<a>选项2</a>
+						</li>
+						<li>
+							<a>选项3</a>
+						</li>
+						<li>
+							<a>选项4</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown-list dropdown pull-left">
+					<div class="dropdown-current">58</div>
+					<span class="arrow pull-right"></span>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">First</a>
+						</li>
+						<li class="hover">
+							<a href="#">Second</a>
+						</li>
+						<li>
+							<a href="#">Third</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">FoldMenu</h3>
+				<ul class="fold-menu">
+					<li class="fold-menu-list">
+						<a href="javascript:;">单图</a>
+					</li>
+					<li class="fold-menu-list">
+						<a href="javascript:;">看板</a>
+					</li>
+					<li class="fold-menu-list has-sub">
+						<a>分析<span class="fold-menu-arrow"></span></a>
+						<ul>
+							<li class="fold-menu-list">
+								<a href="javascript:;">用户分群</a>
+							</li>
+							<li class="fold-menu-list">
+								<a href="javascript:;">用户细查</a>
+							</li>
+						</ul>
+					</li>
+					<li class="fold-menu-list has-sub">
+						<a>管理<span class="fold-menu-arrow"></span></a>
+						<ul>
+							<li class="fold-menu-list">
+								<a href="javascript:;">指标管理</a>
+							</li>
+							<li class="fold-menu-list">
+								<a href="javascript:;">来源管理</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Pager</h3>
+				<div class="pager"></div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">Radios</h3>
+				<div class="radio-group clear-fix">
+					<div class="radio active">
+						<div></div>
+						<span>单选1</span>
+					</div>
+					<div class="radio">
+						<div></div>
+						<span>单选1</span>
+					</div>
+					<div class="radio">
+						<div></div>
+						<span>单选1</span>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">Tab</h3>
+				<span class="tab-name">圈选</span>
+				<div class="tab clear-fix">
+					<div class="tab-btns clear-fix col-4">
+						<div class="tab-btns-items active">当前元素</div>
+						<div class="tab-btns-items">当前位置</div>
+						<div class="tab-btns-items">同类元素</div>
+						<div class="tab-btns-items">自定义</div>
+					</div>
+					<div class="tab-divs">
+						<div class="tab-divs-items open">统计当前文本的元素。 文本不同将不统计。</div>
+						<div class="tab-divs-items">统计当前位置的数据，例如广告位，出现的图片经常变化，此时统计出现在该广告位的所有图片的数据。</div>
+						<div class="tab-divs-items">统计同类元素，例如商品列表页面中出现多个商品，此时统计出现在该列表中的所有商品。页面中绿色高亮显示。</div>
+						<div class="tab-divs-items">
+							<ul class="checkbox">
+								<li class="checkbox-items checked">
+									<div></div>
+									<span class="checkbox-items-cont">限制文本</span>
+									<span class="checkbox-items-detail">xxxx文本</span>
+								</li>
+								<li class="checkbox-items">
+									<div></div>
+									<span class="checkbox-items-cont">限制跳转链接</span>
+									<span class="checkbox-items-detail">http://sxxxxxx.ssc.com</span>
+								</li>
+								<li class="checkbox-items">
+									<div></div>
+									<span class="checkbox-items-cont">限制位置</span>
+									<span class="checkbox-items-detail">第<em>1</em>位</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">Switch</h3>
+				<div class="switch">
+					<div class="switch-box" id="id1">
+						<div class="switch-bar"></div>
+					</div>
+					<div class="switch-box open">
+						<div class="switch-bar"></div>
+					</div>
+				</div>
+			</div>
+			<h1 class="wmda-ui-title">列表类</h1>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">List</h3>
+				<div class="commonList list">
+					<!--<table cellspacing="0">
+						<thead>
+							<tr class="list-head">
+								<th>分群名称</th>
+								<th>分群人数</th>
+								<th>最后计算时间</th>
+								<th>最后修改</th>
+								<th>创建者</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>PC端弹窗关闭按钮的人群</td>
+								<td>35万</td>
+								<td>2017-02-22</td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>
+									<span class="icon-down"></span>
+									<span class="icon-pen"></span>
+									<span class="icon-del"></span>
+								</td>
+							</tr>
+							<tr class="deepcolor">
+								<td>PC端弹窗关闭按钮的人群</td>
+								<td>35万</td>
+								<td>2017-02-22</td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>
+									<span class="icon-down"></span>
+									<span class="icon-pen"></span>
+									<span class="icon-del"></span>
+								</td>
+							</tr>
+							<tr>
+								<td>PC端弹窗关闭按钮的人群</td>
+								<td>35万</td>
+								<td>2017-02-22</td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>
+									<span class="icon-down"></span>
+									<span class="icon-pen"></span>
+									<span class="icon-del"></span>
+								</td>
+							</tr>
+							<tr class="deepcolor">
+								<td>PC端弹窗关闭按钮的人群</td>
+								<td>35万</td>
+								<td>2017-02-22</td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>刘鑫<p>2017-02-22</p></td>
+								<td>
+									<span class="icon-down"></span>
+									<span class="icon-pen"></span>
+									<span class="icon-del"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>-->
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Time Axis List</h3>
+				<div class="timeaxis-list-factors clear-fix">
+					<label>指标筛选：</label>
+					<div class="timeaxis-list-factors-selector">
+						<a class="active">全部</a>
+						<a>打开页面</a>
+						<a>交互行为</a>
+					</div>
+					<span>2017-03-05</span>
+				</div>
+				<div class="timeaxis-list">
+					<!--<ul>
+						<li class="timeaxis-list-start">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="time">19:01</span>
+						</li>
+						<li class="timeaxis-list-openwindow">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="content">[19:02pc端二手车列表页]【绥化二手市场】-绥化58同城</span>
+							<span class="time"></span>
+						</li>
+						<li class="timeaxis-list-click">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="content">http://www.highcharts.com/demo/pie-basic3432423423434adsadads
+sdasdasdasdasdasda</span>
+							<span class="time">19:03</span>
+						</li>
+						<li class="timeaxis-list-openwindow">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="content">[pc端二手车列表页]【绥化二手市场】-绥化58同城</span>
+							<span class="time">19:02</span>
+						</li>
+						<li class="timeaxis-list-openwindow">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="content">[pc端二手车列表页]【绥化二手市场】-绥化58同城[pc端二手车列表页]【绥化二手市场】-绥化58同城[pc端二手车列表页]【绥化二手市场】-绥化58同城</span>
+							<span class="time">19:02</span>
+						</li>
+						<li class="timeaxis-list-click">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="content">http://www.highcharts.com/demo/pie-basic3432423423434adsadadssdasdasdasdasdasda</span>
+							<span class="time">19:03</span>
+						</li>
+						<li class="timeaxis-list-end">
+							<span class="icon"></span>
+							<span class="event"></span>
+							<span class="time">19:03</span>
+						</li>
+					</ul>-->
+				</div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">Details List</h3>
+				<div class="details-list">
+					<!--<div class="details-list-userinfo">
+						<div class="details-list-userinfo-identity clear-fix">
+							<img src="img/people.png" />
+							<div>
+								<p class="details-list-userinfo-identity-area"><span>地区：</span>中国，阜新</p>
+								<p class="details-list-userinfo-identity-id"><span>ID：</span>00011787-4238-422C-9335-737C1A257</p>
+							</div>
+						</div>
+						<div class="details-list-userinfo-visit">
+							<div>
+								<p class="details-list-userinfo-visit-device"><span>上次访问设备：</span>Web</p>
+								<p class="details-list-userinfo-visit-num"><span>近30天访问：</span>2次</p>
+								<p class="details-list-userinfo-visit-time"><span>最近访问：</span>2017-02-10</p>
+							</div>
+							<div></div>
+						</div>
+					</div>
+					<div class="details-list-factor">
+						<div class="details-list-head">指标详情</div>
+						<ul>
+							<li><span>城市：</span><span>阜新</span></li>
+							<li><span>国家：</span><span>中国</span></li>
+							<li><span>屏幕分辨率：</span><span>1024x768</span></li>
+							<li><span>搜索词：</span><span>baidu</span></li>
+							<li><span>事件时间：</span><span>2017-03-03</span></li>
+							<li><span>终端：</span><span>web</span></li>
+							<li><span>IP：</span><span>122.44.55.66</span></li>
+							<li><span>操作系统：</span><span>windows</span></li>
+							<li><span>浏览器：</span><span>ie</span></li>
+							<li><span>访问来源：</span><span>https://www.growingio.com/projects/L9GkaJ96/segmentations</span></li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">CircleSelect Popup</h3>
+				<div class="CircleSelect-Popup">
+					<div class="CircleSelect-Popup-head">
+						<span>共享</span>
+					</div>
+					<div class="CircleSelect-Popup-body">
+						<div class="CircleSelect-Popup-body-form">
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>名称</label>
+								<input type="text" />
+							</div>
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>页面</label>
+								<div class="dropdown-list dropdown pull-left">
+									<div class="dropdown-current">PC_二手</div>
+									<span class="arrow pull-right"></span>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">First</a>
+										</li>
+										<li>
+											<a href="#">Second</a>
+										</li>
+										<li>
+											<a href="#">Third</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="CircleSelect-Popup-body-form-tab clear-fix">
+								<span class="tab-name">圈选</span>
+								<div class="tab clear-fix">
+									<div class="tab-btns clear-fix col-4">
+										<div class="tab-btns-items active">当前元素</div>
+										<div class="tab-btns-items">当前位置</div>
+										<div class="tab-btns-items">同类元素</div>
+										<div class="tab-btns-items">自定义</div>
+									</div>
+									<div class="tab-divs">
+										<div class="tab-divs-items open">统计当前文本的元素。 文本不同将不统计。</div>
+										<div class="tab-divs-items">统计当前位置的数据，例如广告位，出现的图片经常变化，此时统计出现在该广告位的所有图片的数据。</div>
+										<div class="tab-divs-items">统计同类元素，例如商品列表页面中出现多个商品，此时统计出现在该列表中的所有商品。页面中绿色高亮显示。</div>
+										<div class="tab-divs-items">
+											<ul class="checkbox">
+												<li class="checkbox-items checked">
+													<div></div>
+													<span class="checkbox-items-cont">限制文本</span>
+													<span class="checkbox-items-detail">xxxx文本</span>
+												</li>
+												<li class="checkbox-items">
+													<div></div>
+													<span class="checkbox-items-cont">限制跳转链接</span>
+													<span class="checkbox-items-detail">http://sxxxxxx.ssc.com</span>
+												</li>
+												<li class="checkbox-items">
+													<div></div>
+													<span class="checkbox-items-cont">限制位置</span>
+													<span class="checkbox-items-detail">第<em>1</em>位</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="CircleSelect-Popup-body-lineChart">
+
+						</div>
+					</div>
+					<div class="CircleSelect-Popup-foot">
+						<div class="CircleSelect-Popup-foot-btns clear-fix">
+							<button class="button pull-left blue">保存</button>
+							<button class="button pull-right white">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Factors Setting</h3>
+				<div class="factors-setting dimention">
+					<h3 class="factors-setting-title">维度：</h3>
+					<div class="factors-setting-items clear-fix">
+						<div class="factors-setting-items-filter">
+							<a class="active">And</a>
+							<a>Or</a>
+						</div>
+						<!--<div class="factors-setting-items-inputs">
+							<div class="dropdown-list dropdown pull-left">
+								<div class="dropdown-current">58</div>
+								<span class="arrow pull-right"></span>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">First</a>
+									</li>
+									<li>
+										<a href="#">Second</a>
+									</li>
+									<li>
+										<a href="#">Third</a>
+									</li>
+								</ul>
+							</div>
+							<div class="dropdown-list dropdown pull-left">
+								<div class="dropdown-current">58</div>
+								<span class="arrow pull-right"></span>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">First</a>
+									</li>
+									<li>
+										<a href="#">Second</a>
+									</li>
+									<li>
+										<a href="#">Third</a>
+									</li>
+								</ul>
+							</div>
+							<input type="text" placeholder="..." />
+							<button class="factors-setting-items-inputs-delete" type="button"></button>
+						</div>-->
+					</div>
+					<div class="factors-setting-add">
+						<button type="button"></button>
+					</div>
+				</div>
+				<div class="factors-setting-and">
+					<span>And</span>
+				</div>
+				<div class="factors-setting index">
+					<h3 class="factors-setting-title">指标：</h3>
+					<div class="factors-setting-items clear-fix">
+						<div class="factors-setting-items-filter">
+							<a class="active">And</a>
+							<a>Or</a>
+						</div>
+
+					</div>
+					<div class="factors-setting-add">
+						<button type="button"></button>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">UserGroup Setting Form</h3>
+				<div class="form-list">
+					<div class="form-list-items">
+						<label>分群名称：</label>
+						<input type="text" placeholder="请输入用户分群名称" />
+					</div>
+					<div class="form-list-items">
+						<label>备注：</label>
+						<input type="text" placeholder="请输入您的备注" />
+					</div>
+					<div class="form-list-items">
+						<label>用户类型：</label>
+						<div class="new-user-group-formtools">
+							<div class="dropdown-list dropdown pull-left">
+								<div class="dropdown-current">58</div>
+								<span class="arrow pull-right"></span>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">First</a>
+									</li>
+									<li>
+										<a href="#">Second</a>
+									</li>
+									<li>
+										<a href="#">Third</a>
+									</li>
+								</ul>
+							</div>
+							<div class="new-user-group-formtools-tips"></div>
+							<div class="radio-group clear-fix">
+								<div class="radio active">
+									<div></div>
+									<span>单选1</span>
+								</div>
+								<div class="radio">
+									<div></div>
+									<span>单选1</span>
+								</div>
+							</div>
+							<div id="timePicker" class="factors-setting-items-inputs-timepickr">
+								<input class="date-range" size="60" value="">
+								<div class="arrow"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">DefinePage Popup</h3>
+				<div class="definepage-popup clear-fix">
+					<div class="definepage-left">
+						<div class="definepage-header">
+							<span title="给页面一个简单易懂的名字，用*定义页面组">!</span>
+						</div>
+						<div class="definepage-form">
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>名字</label>
+								<input type="text" />
+							</div>
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>域名</label>
+								<input type="text" />
+							</div>
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>路径</label>
+								<input type="text" />
+								<div class="switch-box" id="id1">
+									<div class="switch-bar"></div>
+								</div>
+							</div>
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>查询</label>
+								<input type="text" />
+								<div class="switch-box" id="id1">
+									<div class="switch-bar"></div>
+								</div>
+							</div>
+							<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+								<label>注释</label>
+								<input type="text" placeholder="输入更多注释帮助理解" />
+							</div>
+						</div>
+						<div class="definepage-chart"></div>
+						<div class="CircleSelect-Popup-foot">
+							<div class="CircleSelect-Popup-foot-btns clear-fix">
+								<button class="button pull-left blue">保存</button>
+								<button class="button pull-right white">取消</button>
+							</div>
+						</div>
+					</div>
+					<div class="definepage-right">
+						<div class="definepage-title">当前页面：<span>页面的标题页面的标题页面的标题页面的标题</span></div>
+						<div class="relative-page">
+							<h3>关联页面列表</h3>
+							<ul class="page-list">
+								<li class="selected">
+									<i class="selected-icon"></i>
+									<p class="page-name">当前页面</p>
+								</li>
+								<li>
+									<i class="selected-icon"></i>
+									<p class="page-name">PC端二手车列表页</p>
+									<div class="page-scope">共享</div>
+									<div class="page-meta">
+										<span>刘新</span>
+										<span>创建于</span>
+										<span>2017-03-10</span>
+									</div>
+								</li>
+								<li>
+									<i class="selected-icon"></i>
+									<p class="page-name">PC端二手车列表页</p>
+									<div class="page-scope">共享</div>
+									<div class="page-meta">
+										<span>刘新</span>
+										<span>创建于</span>
+										<span>2017-03-10</span>
+									</div>
+								</li>
+								<li>
+									<i class="selected-icon"></i>
+									<p class="page-name">PC端二手车列表页</p>
+									<div class="page-scope">共享</div>
+									<div class="page-meta">
+										<span>刘新</span>
+										<span>创建于</span>
+										<span>2017-03-10</span>
+									</div>
+								</li>
+								<li>
+									<i class="selected-icon"></i>
+									<p class="page-name">PC端二手车列表页</p>
+									<div class="page-scope">共享</div>
+									<div class="page-meta">
+										<span>刘新</span>
+										<span>创建于</span>
+										<span>2017-03-10</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">List Panel</h3>
+				<table>
+					<tr class="list-panel">
+						<td class="clear-fix">
+							<div id="formPanel">
+								<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+									<label>名字：</label>
+									<input readonly type="text" />
+								</div>
+								<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+									<label>页面：</label>
+									<input readonly type="text" />
+								</div>
+								<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+									<label>域名：</label>
+									<input readonly type="text" />
+								</div>
+								<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+									<label>路径：</label>
+									<input readonly type="text" />
+									<div class="switch-box">
+										<div class="switch-bar"></div>
+									</div>
+								</div>
+								<div class="CircleSelect-Popup-body-form-inputs clear-fix">
+									<label>查询：</label>
+									<input readonly type="text" />
+									<div class="switch-box open">
+										<div class="switch-bar"></div>
+									</div>
+								</div>
+							</div>
+							<div id="chartPanel">
+
+							</div>
+							<div id="screenPanel">
+								<div>
+									<img src="img/viewport.jpg" />
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">complexList Panel</h3>
+				<table>
+					<tr class="list-panel complex">
+						<td class="clear-fix">
+							<div id="processPanel">
+								<div class="process-up">
+									<div class="process-item">
+										<div>测试下一页</div>
+										<div>点击</div>
+										<div>访问用户</div>
+										<div>1</div>
+									</div>
+									<div class="process-item">
+										<div>测试下一页</div>
+										<div>点击</div>
+										<div>访问用户</div>
+										<div>1</div>
+									</div>
+								</div>
+								<div class="process-divider">/</div>
+								<div class="process-down">
+									<div class="process-item">
+										<div>测试下一页</div>
+										<div>点击</div>
+										<div>访问用户</div>
+										<div>1</div>
+									</div>
+									<div class="process-item">
+										<div>测试下一页</div>
+										<div>点击</div>
+										<div>访问用户</div>
+										<div>1</div>
+									</div>
+								</div>
+							</div>
+							<div id="chartPanel">
+
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">tips Pop</h3>
+				<div class="tipsPop">
+					<div class="tipsPop-header">
+						<div class="PopTitle">取消共享指标
+							<span></span>
+						</div>
+					</div>
+					<div class="tipsPop-body">
+						<p class="mainTip">
+							<span>取消共享指标［当前页面］后，使用该指标的</span>
+							<br />
+							<span>1个指标</span>
+							<br />
+							<span>将会受到影响，确定取消共享吗？</span>
+						</p>
+						<div class="inflList">
+							<div class="inflList-item">
+								<div class="inflItemHead">
+									<i class="open"></i>
+									<span>受影响的指标</span>
+								</div>
+								<ul>
+									<li>
+										<span>lymtest</span>
+										<div>
+											<span>lyms</span>
+											<span>修改于</span>
+											<span>2017-03-21</span>
+										</div>
+									</li>
+									<li>
+										<span>lymtest</span>
+										<div>
+											<span>lyms</span>
+											<span>修改于</span>
+											<span>2017-03-21</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tipsPop-footer clear-fix">
+						<button class="button white">取消</button>
+						<button class="button blue">确定删除</button>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row" style="width: 1300px;">
+				<h3 class="wmda-ui-row-title">composite index Pop</h3>
+				<div class="compIndexPop">
+					<div class="compPop-Header">创建复合指标</div>
+					<div class="compPop-body">
+						<div class="compPop-left">
+							<div class="compPopTop">
+								<div class="search-input pull-left">
+									<input type="text" placeholder="搜索">
+									<button></button>
+								</div>
+								<div class="dropdown-list dropdown pull-left">
+									<div class="dropdown-current">58</div>
+									<span class="arrow pull-right"></span>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">First</a>
+										</li>
+										<li class="hover">
+											<a href="#">Second</a>
+										</li>
+										<li>
+											<a href="#">Third</a>
+										</li>
+									</ul>
+								</div>
+								<div class="dropdown-list dropdown pull-left">
+									<div class="dropdown-current">58</div>
+									<span class="arrow pull-right"></span>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">First</a>
+										</li>
+										<li class="hover">
+											<a href="#">Second</a>
+										</li>
+										<li>
+											<a href="#">Third</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="compPopList list">
+
+							</div>
+						</div>
+						<div class="compPop-right">
+							<div class="compPopTop">
+								<div class="commonInput pull-left">
+									<label>指标名称：</label>
+									<input type="text" />
+								</div>
+								<div class="commonInput pull-left">
+									<label>编辑权重：</label>
+									<div data-isopen="1" class="switch-box">
+										<div class="switch-bar"></div>
+									</div>
+								</div>
+								<button class="button blue">保存</button>
+							</div>
+							<div class="compPopSelect">
+								<div ondrop="drop(event)" ondragover="allowDrop(event)" class="compPopSelect-item list">
+									<div class="typeSelect commonInput">
+										<label>类型：</label>
+										<div class="dropdown-list dropdown pull-left">
+											<div class="dropdown-current currentDrop">数量</div>
+											<span class="arrow pull-right"></span>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="javascript:;">数量</a>
+												</li>
+												<li>
+													<a href="javascript:;">浏览用户</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<ul>
+									</ul>
+									<p>请拖拽多个指标至此</p>
+								</div>
+								<div ondrop="drop(event)" ondragover="allowDrop(event)" class="compPopSelect-item list">
+									<div class="typeSelect commonInput">
+										<label>类型：</label>
+										<div class="dropdown-list dropdown pull-left">
+											<div class="dropdown-current currentDrop">数量</div>
+											<span class="arrow pull-right"></span>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="javascript:;">数量</a>
+												</li>
+												<li>
+													<a href="javascript:;">浏览用户</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<ul>
+									</ul>
+									<p>请拖拽多个指标至此</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Apply Project</h3>
+				<div class="applyForm">
+					<h2>项目申请</h2>
+					<div class="commonInput">
+						<label>项目名称：</label>
+						<input id="projectName" type="text" />
+					</div>
+					<div class="commonInput">
+						<label>项目描述：</label>
+						<input id="projectDesc" type="text" />
+					</div>
+					<div class="commonInput">
+						<label>创建人：</label>
+						<input id="projectCreator" type="text" />
+					</div>
+					<div class="applyFoot">
+						<div class="applyFootBtns clear-fix">
+							<button class="button pull-left blue save">保存</button>
+							<button class="button pull-right white cancel">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/moment.min.js"></script>
+		<script src="js/jquery.daterangepicker.min.js"></script>
+		<script src="js/jq_tmpl.js"></script>
+		<script src="js/pager.js"></script>
+		<script src="js/list.js"></script>
+		<script src="js/details-list.js"></script>
+		<script src="js/timeaxis-list.js"></script>
+		<script src="js/factor-setting.js"></script>
+		<script src="js/ui.js"></script>
+	</body>
+
+</html>
