@@ -160,6 +160,21 @@
 					</div>
 				</div>
 			</div>
+			<div class="wmda-ui-row col-half">
+				<h3 class="wmda-ui-row-title">sNotice</h3>
+				<div class="sNotice success">
+					<i class="sNoticeIcon"></i>
+					<span class="sNoticeTips">操作成功</span>
+				</div>
+				<div class="sNotice error">
+					<i class="sNoticeIcon"></i>
+					<span class="sNoticeTips">操作失败</span>
+				</div>
+				<div class="sNotice warning">
+					<i class="sNoticeIcon"></i>
+					<span class="sNoticeTips">警告</span>
+				</div>
+			</div>
 			<h1 class="wmda-ui-title">列表类</h1>
 			<div class="wmda-ui-row">
 				<h3 class="wmda-ui-row-title">List</h3>
@@ -747,7 +762,7 @@ sdasdasdasdasdasda</span>
 					</div>
 				</div>
 			</div>
-			<div class="wmda-ui-row" style="width: 1300px;">
+			<div class="wmda-ui-row" style="width: 1300px;transform: translateX(-155px);">
 				<h3 class="wmda-ui-row-title">composite index Pop</h3>
 				<div class="compIndexPop">
 					<div class="compPop-Header">创建复合指标</div>
@@ -874,6 +889,151 @@ sdasdasdasdasdasda</span>
 							<button class="button pull-left blue save">保存</button>
 							<button class="button pull-right white cancel">取消</button>
 						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Apply Application</h3>
+				<div class="applyApp">
+					<div class="stepHead">
+						<button class="button white back">返回</button>
+						<ul class="stepBox">
+							<li>
+								<span class="stepIcon active">1</span>
+								<span class="stepTips">选择平台</span>
+							</li>
+							<li>
+								<span class="stepIcon">2</span>
+								<span class="stepTips">安装SDK</span>
+							</li>
+							<li>
+								<span class="stepIcon">3</span>
+								<span class="stepTips">检测数据</span>
+							</li>
+						</ul>
+					</div>
+					<div class="stepBody">
+						<h2>安装流程引导</h2>
+						<div class="selectFlatform">
+							<p class="stepBodyTitle">选择平台</p>
+							<ul class="platformList">
+								<li>
+									<span class="platFormIcon web"></span>
+									<span class="platFormName">web网站</span>
+									<button class="button blue">添加应用</button>
+								</li>
+								<li>
+									<span class="platFormIcon ios"></span>
+									<span class="platFormName">IOS</span>
+									<button class="button blue">添加应用</button>
+								</li>
+								<li>
+									<span class="platFormIcon android"></span>
+									<span class="platFormName">Android</span>
+									<button class="button blue">添加应用</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Client Setting</h3>
+				<div class="clear-fix">
+					<div class="tabBtns">
+						<a class="active">IOS</a>
+						<a>Android</a>
+					</div>
+				</div>
+				<div class="clientSetting">
+					<h2>客户端配置管理</h2>
+					<div class="settingForm">
+						<div class="commonInput">
+							<label>数据采集：</label>
+							<div class="switch-box open">
+								<div class="switch-bar"></div>
+							</div>
+						</div>
+						<div class="commonInput">
+							<label>上报时间间隔：</label>
+							<input type="text" />
+							<span class="unit">毫秒</span>
+						</div>
+						<div class="commonInput">
+							<label>事件累计触发上报条数：</label>
+							<input type="text" />
+						</div>
+						<div class="commonInput">
+							<label>单次发送事件条数：</label>
+							<input type="text" />
+						</div>
+						<div class="commonInput">
+							<label>本地缓存数据阈值：</label>
+							<input type="text" />
+							<span class="unit">字节</span>
+						</div>
+						<div class="commonInput">
+							<label>移动网络下数据上报量上限：</label>
+							<input readonly="readonly" type="text" />
+							<span>字节</span>
+							<span>使用WIFI：</span>
+							<div class="switch-box ctrl">
+								<div class="switch-bar"></div>
+							</div>
+						</div>
+						<div class="commonInput">
+							<label>数据采集是否压缩：</label>
+							<div class="switch-box open">
+								<div class="switch-bar"></div>
+							</div>
+						</div>
+						<div class="commonInput">
+							<label>移动网络下数据上报量上限：</label>
+							<input readonly="readonly" type="text" />
+							<span>字节</span>
+							<span>使用WIFI：</span>
+							<div class="switch-box ctrl">
+								<div class="switch-bar"></div>
+							</div>
+						</div>
+						<div class="commonInput">
+							<label>是否开启圈选功能：</label>
+							<div class="switch-box open">
+								<div class="switch-bar"></div>
+							</div>
+						</div>
+						<div class="settingFootBtns clear-fix">
+							<button class="button pull-left blue save">保存</button>
+							<button class="button pull-right white cancel">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">Confirm Pop</h3>
+				<div class="sConfirm">
+					<span class="sConfirmClose"></span>
+					<div class="sConfirmBody">
+						<p>确定删除吗？</p>
+						<div class="sConfirmBtns">
+							<button class="button blue ok">确定</button>
+							<button class="button white cancel">取消</button>
+						</div>
+					</div>
+				</div>
+				<div class="sConfirm">
+					<span class="sConfirmClose"></span>
+					<div class="sConfirmBody">
+						<p>警告！</p>
+						<div class="sConfirmBtns">
+							<button class="button white ok">确定</button>
+						</div>
+					</div>
+				</div>
+				<div class="sConfirm">
+					<span class="sConfirmClose"></span>
+					<div class="sConfirmBody">
+						<p>提示！</p>
 					</div>
 				</div>
 			</div>

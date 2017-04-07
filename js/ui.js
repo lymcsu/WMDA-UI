@@ -337,3 +337,14 @@ $(".compPop-right").on("click", ".switch-box", function(){
 	}
 })
 //复合指标end
+
+//客户端配置start
+$(".settingForm .commonInput .ctrl").on("click", function(){
+	var isOpen = $(this).attr("data-isopen");
+	if(isOpen === "1"){
+		$(this).siblings("input").val("").attr("readonly",true);
+	}else{
+		$(this).siblings("input").attr("readonly",false);
+	}
+})
+//客户端配置end
