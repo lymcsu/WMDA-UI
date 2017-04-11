@@ -1037,17 +1037,333 @@ sdasdasdasdasdasda</span>
 					</div>
 				</div>
 			</div>
-		</div>
-		<script src="js/jquery-1.8.3.min.js"></script>
-		<script src="js/moment.min.js"></script>
-		<script src="js/jquery.daterangepicker.min.js"></script>
-		<script src="js/jq_tmpl.js"></script>
-		<script src="js/pager.js"></script>
-		<script src="js/list.js"></script>
-		<script src="js/details-list.js"></script>
-		<script src="js/timeaxis-list.js"></script>
-		<script src="js/factor-setting.js"></script>
-		<script src="js/ui.js"></script>
+			<div class="wmda-ui-row">
+				<h3 class="wmda-ui-row-title">SDK Insert Nav</h3>
+				<div class="sdkInsertNav">
+					<div class="navHead">
+						<h2>安装流程引导</h2>
+						<p class="navHeadTips">请按以下步骤进行ios SDK安装，如有问题请联系xxx</p>
+						<p>您的应用ID为：<span class="appIdDisp">ad1234213124132</span></p>
+						<p>此应用的URL Scheme为：<span class="schemeDisp">www.b.c</span></p>
+					</div>
+					<div class="navBody">
+						<h3 class="navTitle">1.下载	ios	SDK</h3>
+						<p>
+							解压缩sdk，将解压缩后的 WMDA.h和libWMDA.a添加到您的工程中
+							<br />
+							<img src="img/sdk_1.jpg" width="400" />
+						</p>
+						<h3 class="navTitle">2.添加依赖项目</h3>
+						<p>
+							libicucore.tbd: 用于解析页面内容
+							<br /> libz.tbd: 用于日志数据压缩
+							<br /> libsqlite3.tbd: 用于临时缓存日志
+							<br />
+							<img src="img/sdk_2.jpg" width="400" />
+						</p>
+						<h3 class="navTitle">3.添加编译参数</h3>
+						<p>
+							<img src="img/sdk_3.jpg" width="800" />
+						</p>
+						<h3 class="navTitle">4.初始化 WMDA</h3>
+						<p>
+							在您的 AppDelegate.m中添加:
+							<pre>
+#import	"WMDA.h"
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary	*)launchOptions	{
+    ...
+    //	启动 WMDA
+    [WBMDA initWithAppId:@"2" appKey:@"12345678" channelId:@"" encryptKey:@"" isDebug:YES];						
+}
+							</pre>
+						</p>
+						<h3 class="navTitle">5.添加 URL Scheme</h3>
+						<p>
+							可以方便您唤醒 App 进行圈选.
+							<br />
+							<img src="img/sdk_4.jpg" width="900" />
+						</p>
+						<h3 class="navTitle">6.添加激活圈选的代码</h3>
+						<p>
+							因为您代码的复杂程度以及iosSDK的版本差异,有时候[WMDAhandleUrl:url]并没有被调用,请在各个平台上调试这段代码,确保当App被 URL scheme 唤醒之后,该函数能被调用到
+							<pre>
+- (BOOL)application:(UIApplication	*)application	openURL:(NSURL	*)url	
+sourceApplication:(NSString	*)sourceApplication	annotation:(id)annotation
+{
+	...
+	if	([WMDA handleUrl:url])	//	请务必确保该函数被调用
+	{
+		return	YES;
+	}
+	return	NO;							
+	...
+}	
+							</pre>
+						</p>
+						<h3 class="navTitle">7.重要配置项</h3>
+						<h4 class="navFoldTitle">对界面元素设置ID</h4>
+						<div class="fold">
+							当您的应用界面改版时，可能会导致无法准确地统计已经圈选的元素。因此，对于应用中的主要流程涉及到的界面元素，建议您对它们设置固定的唯一 ID，以保证数据的一致性。
+						</div>
+						<h4 class="navFoldTitle">具体要求</h4>
+						<div class="fold">
+							主要流程指的是登录、注册、购买、发帖等操作步骤。
+							<br /> 设置 ID 的对象是界面的重要按钮等元素，如“注册”、“结算”、“发布”按钮。
+							<br /> 设置 ID 的方法如下：
+							<br /> （1）接口
+							<pre>@interface UIView(WBProperty)
+@property(nonatomic,copy) NSString* eventId;
+@end</pre> （2）代码写法：请在控件创建后设置该属性
+							<pre>UIView * MyView;
+…
+MyView. eventId = @"myView”;</pre> （3）ID 只能设置为字母、数字和下划线的组合。
+						</div>
+						<h4 class="navFoldTitle">用户自定义维度</h4>
+						<div class="fold">
+							WMDA 的数据分析工具提供了例如“应用版本”，“渠道”，“城市”，“设备型号”等等这些通用维度。但在使用过程中，有时无法满足用户对特定数据维度的分析要求。
+							<br /> 为了能够让数据分析变得更加的灵活，我们提供了自定义维度的接口，使用者可以对各种对象设置属性。
+							<br /> 这些属性在作图时，将表现为维度。
+						</div>
+						<h4 class="navFoldTitle">配置用户属性</h4>
+						<div class="fold">
+							根据需求，可以用来指定用户的各种属性
+							<br /> 自然属性，比如性别、出生年月等。
+							<br /> 账户属性，比如等级、类型标签等。
+							<br /> 行为特征，比如是否有过购买记录之类。
+							<br /> 用户属性被称为 UserProperty 字段，最多支持 9 个，从 1 到 9，接口如下：
+							<pre>[WMDA setUserProperty1:@”up1” forKey:@”v1”];
+[WMDA setUserProperty2:@”up2” forKey:@”v2”];
+...
+[WMDA setUserProperty9:@”up9” forKey:@”v9”];</pre> 在下面的例子中，总计上传 4 个用户属性，分别是：
+							<pre>
+up1:	company_id:943123
+up2:	user_name:王同学
+up3:	company_name:GrowingIO
+up4:	sales_name:销售员小王
+-(void)viewWillAppear
+{
+    [super	viewWillAppear];
+    …
+    [WMDA setUserProperty1:@"943123"	forKey:@"company_id"];
+    [WMDA setUserProperty2:@"王同学"	forKey:@"user_name"];
+    [WMDA setUserProperty3:@"GrowingIO"	forKey:@"company_name"];
+    [WMDA setUserProperty4:@"销售员小王"	forKey:@"sales_name"];
+    …
+}</pre> UserProperty 字段设置条件和限制
+							<br /> UserProperty 字段不能是和用户没有直接关系的属性，比如不能是订单 ID，商品 ID等。
+							<br /> 如果没有用到所有的 UserProperty 字段，剩下的可以不设置。
+							<br /> 同一个 UserProperty 字段，必须保持在各个平台意义相同。
+						</div>
+						<h4 class="navFoldTitle">配置用户ID</h4>
+						<div class="fold">
+							WMDA 默认使用设备标识唯一标识设备,如果需要标识登录用户可以调用接口实现：
+							<pre>[WMDA	setUserId:@”XXXX”];</pre> 对于用户 ID字段设置时机的说明
+							<h3>基本原则</h3> 当 App使用者的登录状态改变时设置用户 ID 字段的值
+							<br />设置后产生的所有事件均被记录为该用户行为直到新的用户 ID 被设置为止.
+							<br />重复设置用户 ID 会导致新的值取代旧的，旧值会被丢弃
+							<br />（1）用户手动登录
+							<br />如果有多个登录入口，在每一个入口登录成功后，都需要调用[WMDA setUserId:]来设置用户的唯一标识。
+							<br />如果有第三方登录，成功登录后需要调用[WMDA setUserId:]方法。
+							<br />自动登录：App 启动时，自动登录或者用户默认是登录状态，也需要调用[WMDA setUserId:]方法
+							<br />（2）注册：有的 App 注册成功后，默认登录，这种情况下也需要调用[WMDA setUserId:]方法。
+							<br />（3）退出：退出登录时，需要把用户ID字段置空(nil)。
+						</div>
+						<h4 class="navFoldTitle">配置页面属性</h4>
+						<div class="fold">
+							在 iOS 应用中，页面指的是 UIViewController。
+							<br />页面属性被称为 PageProperty 字段，每个 UIViewController 最多支持 9 个
+							<br />PageProperty 字段，从 PageProperty1 到 PageProperty9，接口如下：
+							<pre>@interface	UIViewController	(WBProperty)
+- (void)setPageProperty1:(NSString*)value	forKey:(NSString*)key;
+- (void)setPageProperty2:(NSString*)value	forKey:(NSString*)key;
+…
+- (void)setPageProperty9:(NSString*)value	forKey:(NSString*)key;
+@end</pre> 我们以商品详情页为例详细说明它的用法。
+							<br />您可以将商品的类别，尺码、颜色、生产厂商等信息设置为 PageProperty 字段，从而更加灵活的分析用户行为。
+							<br />如，定义产品详情页 4 个页面属性，分别是：
+							<pre>PageProperty1：商品 ID：1234567
+PageProperty2：商品名称：运动 T-shirt
+PageProperty3：商品尺码：M
+PageProperty4：商品颜色：蓝色
+//	UIViewController	的子类实现文件中
+UIViewController	*	MyV;
+…
+[MyVC	setPageProperty1:@"1234567"	forKey:@"商品 ID"];
+[MyVC	setPageProperty2:@"运动 T-shirt"	forKey:@"商品名称"];
+[MyVC	setPageProperty3:@"M"	forKey:@"商品尺码"];
+[MyVC setPageProperty4:@"蓝色"	forKey:@"商品颜色"];
+…</pre> PageProperty 字段设置条件和限制
+							<br />页面属性接口必须在 UIViewController 创建后设置,在 viewWillAppear 之前。
+							<br />如果没有用到所有的 PageProperty 字段，剩下的可以不设置。
+							<br />除了页面本身外，在商品详情页上面所有的界面元素的行为，包括浏览和点击等，都会和这些页面属性建立关联。
+						</div>
+					</div>
+				</div>
+				<div class="sdkInsertNav">
+					<div class="navHead">
+						<h2>安装流程引导</h2>
+						<p class="navHeadTips">请按以下步骤进行Android SDK安装，如有问题请联系xxx</p>
+						<p>您的应用ID为：<span class="appIdDisp">ad1234213124132</span></p>
+						<p>此应用的URL Scheme为：<span class="schemeDisp">www.b.c</span></p>
+					</div>
+					<div class="navBody">
+						<h3 class="navTitle">一、导入SDK</h3>
+						<h4 class="navSubTitle">Gradle 编译环境(Android Studio)</h4>
+						<div>
+							1.将repo.zip解压至任意路径下
+							<br />2.在<b>Project级别</b>的build.gradle文件中添加 wmdaplugin 依赖：
+							<pre>buildscript {
+    repositories {
+        maven{
+       	    // 由于代码保护问题，故没将pulgin上传到maven中⼼仓库。
+     	    // 所以需要添加本地 maven repo
+     	    // 其中'/xxx/xxx/xxx/repo'为repo.zip解压的路径
+     	    url uri('/xxx/xxx/xxx/repo')
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+        // 添加wmdapulgin依赖
+        classpath 'com.wuba.wmdaplugin:wmdaplugin:1.0.0'
+    }
+}</pre> 3.将wmda.aar移动⾄module下的libs⽬录内，例如 XXProject/app/libs/
+							<br />4.在<b>Module级别</b>的build.gradle文件中添加 wmdaplugin 和 wmda 的依赖：
+							<pre>apply plugin: 'com.android.application'
+// 使⽤wmdaplugin
+apply plugin: 'com.wuba.wmdaplugin'
+···
+repositories {
+    flatDir {
+    dirs 'libs'
+    }
+}
+dependencies {
+    ···
+    // 添加wmda的依赖
+    compile(name:'wmda', ext:'aar')
+    ···
+}</pre>
+						</div>
+						<h3 class="navTitle">二、初始化</h3> 请在项目 Application 的 onCreate 方法中对WMDA进行初始化：
+						<div>
+							<pre>public class MyCustomApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // 应⽤ID，具体指向服务端索取
+        String appid = "3";
+        // 应⽤ID对应key，具体指向服务端索取
+        String appkey = "12345678";
+        // 事件存储加密秘钥，⽤于对本地事件的加密存储
+        // 请勿频繁更改，秘钥更改后，之前加密的内容将⽆法解密上报
+        // 如果encryptKey不设或者值为空字符串，则默认不进⾏加密
+        String encryptKey = "";
+        // 渠道ID
+        String channelID = "wandoujia";
+        // 设置debug开关，release版本请将其设为false
+        boolean isDebug = true;
+        WMDA.init(this,appid,appkey,encryptKey,channelID, isDebug);
+    }
+}</pre>
+							<b>注意事项：</b>
+							<br /><b>请确保将代码添加在 Application 的 onCreate 方法中，添加到其他方法中可能导致数据不准确。</b>
+						</div>
+						<h3 class="navTitle">三、必要权限</h3> 使⽤WMDA需要以下权限：
+						<div>
+							<pre>
+ &lt;!-- WMDA上报需要⽹络权限 --&gt;
+ &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+ &lt;!-- WMDA需要获取⼀些设备信息 --&gt;
+ &lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;
+ &lt;!-- WMDA需要获取WIFI状态 --&gt;
+ &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /&gt;
+ &lt;!-- WMDA需要获取⽹络状态 --&gt;
+ &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;</pre>
+						</div>
+						<h3 class="navTitle">四、代码混淆</h3> 如果您启用了代码混淆，请在您的 proguard-rules.pro 中添加以下代码：
+						<div>
+							<pre>-dontwarn com.wuba.wmda.**
+-keep class com.wuba.wmda.**{*;}
+-keep class * extends android.app.Fragment {
+    public void setUserVisibleHint(boolean);
+    public void onHiddenChanged(boolean);
+    public void onResume();
+    public void onPause();
+}
+-keep class android.support.v4.app.Fragment {
+    public void setUserVisibleHint(boolean);
+    public void onHiddenChanged(boolean);
+    public void onResume();
+    public void onPause();
+}
+-keep class * extends android.support.v4.app.Fragment {
+    public void setUserVisibleHint(boolean);
+    public void onHiddenChanged(boolean);
+    public void onResume();
+    public void onPause();
+}</pre>
+						</div>
+						<h3 class="navTitle">五、圈选添加URL Scheme</h3> 将下面的Intent-filter添加到AndroidManifest.xml中的LAUNCHER Activity下，以便我们唤醒您的App，进入圈
+选。
+						<div>
+							<pre>
+&lt;!-- WMDA 启动圈选接入 --&gt;
+&lt;intent-filter&gt;
+    &lt;data android:scheme="wmda.58"/&gt;
+    &lt;action android:name="android.intent.action.VIEW"/&gt;
+    &lt;category android:name="android.intent.category.DEFAULT"/&gt;
+    &lt;category android:name="android.intent.category.BROWSABLE"/&gt;
+&lt;/intent-filter&gt;
+&lt;!-- WMDA 启动圈选接⼝ --&gt;</pre>
+						<b>注意事项： 请将整个intent-filter添加到LAUNCHER Activity中,并确保其中只有一个data字段。</b>
+						</div>
+						<h3 class="navTitle">六、重要配置项</h3>
+						<h4 class="navFoldTitle">设置界面元素ID</h4>
+						<div class="fold">
+							当您的App界面改版时，可能会导致方法准确地统计已经圈选的元素。因此，对于应用中的主要流程涉及到的界面元素，建议您对它 们设置固定的唯一ID，以保证数据的一致性。
+							<br />WMDA.setViewID(View view, String viewID) 其中，第一个参数是要设置的View，第二个是给这个View的ID。
+						</div>
+						<h4 class="navFoldTitle">采集GPS数据</h4>
+						<div class="fold">
+							App获取GPS坐标后，可以调用如下接口进行设置经纬度。
+							<pre>WMDA.setLocation(String latitude, String longitude)</pre>
+							<b>注意事项： Android端WMDA SDK不会自动获取GPS数据，如果要采集GPS数据，请在获取到GPS信息后调用setLocation()接口设置。</b>
+						</div>
+						<h4 class="navFoldTitle">设置采集Area</h4>
+						<div class="fold">
+							特殊接口，用于一些业务线的特殊场景使用，如不需要，可不使用该接口。
+							<pre>WMDA.setArea(String area)</pre>
+						</div>
+						<h4 class="navFoldTitle">设置GPSArea</h4>
+						<div class="fold">
+							特殊接口，用于一些业务线的特殊场景使用，如不需要，可不使用该接口。
+							<pre>WMDA.setGPSArea(String gps_area)</pre>
+						</div>
+						<h4 class="navFoldTitle">采集广告Banner数据</h4>
+						<div class="fold">
+							对于横向滚动的Banner广告，如果该banner是通过 ViewPager、AdapterView 或者 RecyclerView 实现的，请在Banner创建时（包括动态创建）调用下面的接口来采集数据。
+							<pre>WMDA.traceBanner(View banner)</pre>
+						</div>
+						<h3 class="navTitle">七、自定义维度配置项</h3>
+						为了能够让数据分析变得更加的灵活，我们提供了自定义维度的接口，使用者可以对各种对象设置属性。这些属性在作图时，将表现为维度。
+						<div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<script src="js/jquery-1.8.3.min.js"></script>
+			<script src="js/moment.min.js"></script>
+			<script src="js/jquery.daterangepicker.min.js"></script>
+			<script src="js/jq_tmpl.js"></script>
+			<script src="js/pager.js"></script>
+			<script src="js/list.js"></script>
+			<script src="js/details-list.js"></script>
+			<script src="js/timeaxis-list.js"></script>
+			<script src="js/factor-setting.js"></script>
+			<script src="js/ui.js"></script>
 	</body>
 
 </html>

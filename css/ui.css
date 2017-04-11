@@ -13,7 +13,17 @@
 	border-radius: 4px;
 	font-size: 14px;
 }
-
+pre{
+	font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+	font-size: 13px;
+    color: #4d4d4c;
+    background: #f1f1f1;
+    padding: 10px;
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+}
 input {
 	color: #9A9FA8;
 	border: 1px solid #DFE3E9;
@@ -2082,3 +2092,63 @@ input {
 	margin: 0 15px;
 }
 /*sConfirm*/
+
+/*sdk安装导航*/
+.sdkInsertNav{
+	width: 700px;
+	margin: 20px auto;
+	font-size: 14px;
+	color: #666;
+}
+.sdkInsertNav > p,.sdkInsertNav > div{
+	margin: 15px 0;
+	line-height: 30px;
+}
+.navHead h2{
+	color: #2184CF;
+	font-size: 24px;
+	font-weight: 400;
+	text-align: center;
+	margin: 10px 0;
+}
+.navHeadTips{
+	text-align: center;
+}
+.appIdDisp,.schemeDisp{
+	background-color: yellow;
+	color: #ea6947;
+}
+.navTitle{
+	color: #000;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 30px 0;
+}
+.navFoldTitle{
+	font-size: 16px;
+	color: #333;
+	margin: 30px 0 10px 0;
+	cursor: pointer;
+}
+.navFoldTitle:after{
+	color: #ea6947;
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 15px;
+	font-weight: 400;
+	content: '展开';
+}
+.navFoldTitle.open:after{
+	content: '收起';
+}
+.navSubTitle{
+	color: #666;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 20px 0;
+}
+div.fold{
+	display: none;
+	line-height: 24px;
+}
+/*sdk安装导航*/

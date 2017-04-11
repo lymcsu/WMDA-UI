@@ -348,3 +348,9 @@ $(".settingForm .commonInput .ctrl").on("click", function(){
 	}
 })
 //客户端配置end
+
+//SDK插入导航
+$(".navFoldTitle").on("click", function(){
+	$(this).next(".fold").slideToggle("fast");
+	$(this).toggleClass("open");
+})
