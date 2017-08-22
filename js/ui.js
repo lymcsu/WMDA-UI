@@ -354,3 +354,11 @@ $(".navFoldTitle").on("click", function(){
 	$(this).next(".fold").slideToggle("fast");
 	$(this).toggleClass("open");
 })
+
+
+//成员管理
+$(".tabItem").on("click", function(){
+	var index = $(this).index();
+	$(".tabDiv").hide();
+	$(".tabDiv:eq("+ index +")").show();
+})

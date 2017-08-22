@@ -13,17 +13,19 @@
 	border-radius: 4px;
 	font-size: 14px;
 }
-pre{
+
+pre {
 	font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 	font-size: 13px;
-    color: #4d4d4c;
-    background: #f1f1f1;
-    padding: 10px;
-    line-height: 1.6;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 10px 0;
+	color: #4d4d4c;
+	background: #f1f1f1;
+	padding: 10px;
+	line-height: 1.6;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin: 10px 0;
 }
+
 input {
 	color: #9A9FA8;
 	border: 1px solid #DFE3E9;
@@ -1233,7 +1235,6 @@ input {
 	cursor: pointer;
 	position: relative;
 	transition: 0.2s ease-in-out;
-	
 }
 
 .switch-box.open {
@@ -1249,7 +1250,6 @@ input {
 	position: absolute;
 	left: 0;
 	transition: 0.2s ease-in-out;
-	
 }
 
 .switch-box.open .switch-bar {
@@ -1257,7 +1257,6 @@ input {
 	/*left: auto;*/
 	border: 1px solid #259BF3;
 	transition: 0.2s ease-in-out;
-	
 }
 
 
@@ -2019,47 +2018,60 @@ input {
 	text-align: center;
 	margin-bottom: 30px;
 }
-.settingForm{
+
+.settingForm {
 	width: 620px;
 	margin: 0 auto;
 	text-align: center;
 	padding-left: 30px;
 }
-.settingForm .commonInput{
+
+.settingForm .commonInput {
 	margin: 16px auto;
 }
-.settingForm .commonInput input{
+
+.settingForm .commonInput input {
 	width: 240px;
 	float: left;
 }
-.settingForm .commonInput input[readonly='readonly']{
+
+.settingForm .commonInput input[readonly='readonly'] {
 	background-color: #f1f1f1;
 }
-.settingForm .commonInput label{
+
+.settingForm .commonInput label {
 	width: 160px;
 	text-align: right;
 }
-.settingForm .commonInput span{
+
+.settingForm .commonInput span {
 	margin-left: 12px;
 	margin-top: 10px;
 	float: left;
 }
-.settingForm .commonInput .switch-box{
+
+.settingForm .commonInput .switch-box {
 	float: left;
 	margin-top: 8px;
 }
-.settingFootBtns{
+
+.settingFootBtns {
 	width: 200px;
 	margin: 0 auto;
 }
-.settingFootBtns button{
+
+.settingFootBtns button {
 	width: 80px;
 	margin-top: 10px;
 }
+
+
 /*客户端配置end*/
 
+
 /*sConfirm*/
-.sConfirm{
+
+.sConfirm {
 	width: 260px;
 	height: 160px;
 	background-color: #fff;
@@ -2070,67 +2082,84 @@ input {
 	float: left;
 	margin-right: 20px;
 }
-.sConfirmClose{
+
+.sConfirmClose {
 	float: right;
 	width: 14px;
 	height: 14px;
 	background: url(../img/Cross.png) no-repeat center center;
 	cursor: pointer;
 }
-.sConfirmBody{
+
+.sConfirmBody {
 	padding-top: 30px;
 	height: 100%;
 }
-.sConfirmBody p{
+
+.sConfirmBody p {
 	font-size: 14px;
 	color: #999;
 	height: 70px;
 }
-.sConfirmBtns button{
+
+.sConfirmBtns button {
 	width: 60px;
 	height: 28px;
 	margin: 0 15px;
 }
+
+
 /*sConfirm*/
 
+
 /*sdk安装导航*/
-.sdkInsertNav{
+
+.sdkInsertNav {
 	width: 700px;
 	margin: 20px auto;
 	font-size: 14px;
 	color: #666;
 }
-.sdkInsertNav > p,.sdkInsertNav > div{
+
+.sdkInsertNav> p,
+.sdkInsertNav> div {
 	margin: 15px 0;
 	line-height: 30px;
 }
-.navHead h2{
+
+.navHead h2 {
 	color: #2184CF;
 	font-size: 24px;
 	font-weight: 400;
 	text-align: center;
 	margin: 10px 0;
 }
-.navHeadTips{
+
+.navHeadTips {
 	text-align: center;
 }
-.appIdDisp,.schemeDisp{
+
+.appIdDisp,
+.schemeDisp {
 	background-color: yellow;
 	color: #ea6947;
 }
-.navTitle{
+
+.navTitle {
 	color: #000;
 	font-size: 18px;
 	font-weight: bold;
 	margin: 30px 0;
 }
-.navFoldTitle{
+
+.navFoldTitle {
 	font-size: 16px;
 	color: #333;
 	margin: 30px 0 10px 0;
 	cursor: pointer;
 }
-.navFoldTitle:after{
+
+.navFoldTitle:after {
 	color: #ea6947;
 	font-size: 14px;
 	display: inline-block;
@@ -2138,17 +2167,328 @@ input {
 	font-weight: 400;
 	content: '展开';
 }
-.navFoldTitle.open:after{
+
+.navFoldTitle.open:after {
 	content: '收起';
 }
-.navSubTitle{
+
+.navSubTitle {
 	color: #666;
 	font-size: 16px;
 	font-weight: bold;
 	margin: 20px 0;
 }
-div.fold{
+
+div.fold {
 	display: none;
 	line-height: 24px;
 }
+
+code {
+	background-color: #f1f1f1;
+	padding: 4px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+}
+
+
 /*sdk安装导航*/
+
+
+/*成员管理start*/
+
+.manageMember {
+	height: 100%;
+	padding: 20px;
+	background-color: #fff;
+}
+
+.memberHead {
+	height: 50px;
+	border-bottom: 1px solid #DFE2E5;
+	margin-bottom: 25px;
+}
+
+#searchMember {
+	height: 36px;
+	width: 210px;
+	margin-top: 7px;
+	float: right;
+	padding: 0 30px 0 8px;
+}
+
+.memberTab {
+	float: left;
+}
+
+.memberTab li {
+	width: 60px;
+	height: 50px;
+	float: left;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.memberTab li.active {
+	border-bottom: 3px solid #2EA2F8;
+	color: #0E8ED8;
+}
+
+.memberNav {
+	float: left;
+	width: 140px;
+	border: 1px solid #E6EAEE;
+	border-radius: 2px;
+}
+
+.allMembers {
+	height: 56px;
+	line-height: 56px;
+	background-color: #FAFBFC;
+	padding: 0 20px;
+	font-size: 18px;
+	color: #354052;
+	font-weight: bold;
+}
+
+.memberNavList li {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.memberAuthority {
+	color: #666;
+	float: left;
+}
+
+.memberNum {
+	color: #9A9FA8;
+	float: right;
+	font-size: 14px;
+}
+
+.memberList {
+	margin-left: 160px;
+	border: 1px solid #E6EAEE;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.memListTitle {
+	height: 56px;
+	line-height: 56px;
+	font-size: 18px;
+	color: #333;
+	padding-left: 25px;
+	background-color: #FAFBFC;
+}
+
+.memberList li {
+	height: 56px;
+	line-height: 56px;
+	padding: 0 20px;
+}
+
+.memberList li:nth-child(2n) {
+	background-color: #FAFBFC;
+}
+
+.memberIcon {
+	width: 36px;
+	height: 36px;
+	background-color: #259BF3;
+	border-radius: 18px;
+	text-align: center;
+	color: #fff;
+	line-height: 34px;
+	font-size: 18px;
+	margin-right: 15px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.memberInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.memberInfo span {
+	display: block;
+	line-height: 16px;
+	font-size: 14px;
+}
+
+.memberInfo span:last-child {
+	color: #aaa;
+}
+
+.memberList .dropdown-list {
+	margin-top: 10px;
+}
+
+.authorityDisp {
+	color: #9A9FA8;
+	width: 150px;
+	height: 36px;
+	padding: 0 13px;
+	border-radius: 2px;
+	border: 1px solid #DFE3E9;
+	background: linear-gradient( 0deg, #F2F4F7, #fff);
+	float: right;
+	line-height: 36px;
+	margin-top: 10px;
+}
+
+.memberBody .tabDiv:nth-child(2) {
+	display: block;
+}
+
+.tabDiv {
+	display: none;
+}
+
+.inviteMember {
+	padding: 10px 20px;
+	border: 1px solid #c1c1c1;
+	border-radius: 4px;
+}
+
+.inviteMember h4 {
+	font-size: 18px;
+}
+
+.inviteMember label {
+	font-size: 14px;
+	margin: 26px 10px 0 0;
+}
+
+.inviteMember textarea {
+	width: 100%;
+	height: 200px;
+	margin-top: 10px;
+	border-color: #ccc;
+	padding: 12px;
+	outline: none;
+}
+
+.inviteFootBtn button {
+	width: 80px;
+	margin: 10px 0 10px 10px;
+}
+
+
+/*成员管理end*/
+
+
+/*新建弹框start*/
+
+.newBuild {
+	padding: 8px 16px;
+	color: #666;
+	width: 360px;
+	max-height: 600px;
+	overflow-y: auto;
+	border: 1px solid #d9d9d9;
+	border-radius: 3px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .17);
+	background-color: #fff;
+}
+
+.newListTitle {
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+.newBuild ul {
+	border-bottom: 1px solid #dae2e5;
+	padding-bottom: 8px;
+}
+
+.newBuild ul li {
+	height: 50px;
+	line-height: 50px;
+	padding-left: 12px;
+	text-align: left;
+	color: #3f5169;
+}
+
+.appTypeIcon.web {
+	background: url(../img/web.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.appTypeIcon.ios {
+	background: url(../img/iOS.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.appTypeIcon.android {
+	background: url(../img/android.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.appTypeIcon {
+	display: inline-block;
+	width: 26px;
+	min-height: 26px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.newBuild .appInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.newBuild .appName {
+	height: 25px;
+	line-height: 28px;
+	display: block;
+}
+
+.newBuild .appDomain {
+	color: #a3b2be;
+	height: 25px;
+	line-height: 20px;
+	display: block;
+}
+
+.newBuild .linkBtn {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 16px;
+	border-radius: 5px;
+	border: 1px solid #dae2e5;
+	float: right;
+	color: #333;
+	margin-top: 10px;
+}
+
+.newBuild .linkBtn:hover {
+	background-color: #2198F1;
+	color: #fff;
+}
+
+.linkItem {
+	color: #666;
+	display: block;
+	height: 50px;
+	border-bottom: 1px solid #dae2e5;
+	white-space: nowrap;
+}
+.newAnalysis li:hover {
+	background-color: #259bf3;
+}
+.newAnalysis li:hover a{
+	color: #fff;
+	border-bottom: none;
+}
+/*新建弹框end*/
